@@ -446,24 +446,6 @@ a:hover {
     border-bottom-left-radius: 4px;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .movie-card {
-        min-width: 200px;
-        width: 200px;
-        height: 112px;
-    }
-
-    .slider-title {
-        font-size: 4vw;
-        line-height: 4.5vw;
-    }
-}
-
 /* Footer */
 footer {
     padding: 0 4%;
@@ -496,8 +478,270 @@ footer {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+/* Mobile adjustments */
+
+/* ========== MOBILE PEQUENO (até 480px) ========== */
+@media (max-width: 480px) {
+    /* Navbar */
+    .navbar {
+        padding: 0 2%;
+        height: 60px;
+    }
+
+    .navbar-left {
+        gap: 10px;
+    }
+
+    .logo {
+        width: 70px;
+        margin-right: 10px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 10px;
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+
+    .kids-link {
+        font-size: 12px;
+    }
+
+    .profile-icon {
+        width: 28px;
+    }
+
+    /* Sliders */
+    .sliders-container {
+        padding: 60px 2% 80px 2%;
+    }
+
+    .slider-section {
+        margin-bottom: 2.5vw;
+    }
+
+    .slider-title {
+        font-size: 1rem;
+        line-height: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .movie-card {
+        min-width: 150px;
+        width: 150px;
+        height: 84px;
+    }
+
+    .movie-card:hover {
+        transform: scale(1.4) translateY(-3%);
+    }
+
+    .movie-row {
+        gap: 6px;
+        padding: 8px 2% 30px 2%;
+    }
+
+    /* Card Details Modal */
+    .card-details {
+        padding: 12px 10px;
+        gap: 8px;
+    }
+
+    .details-buttons {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .btn-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .details-info {
+        font-size: 10px;
+        gap: 6px;
+    }
+
+    .details-tags {
+        font-size: 9px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 0 2%;
+        font-size: 11px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+}
+
+/* ========== MOBILE MÉDIO (481px até 768px) ========== */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 0 3%;
+        height: 65px;
+    }
+
+    .navbar-left {
+        gap: 15px;
+    }
+
+    .logo {
+        width: 80px;
+        margin-right: 15px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 15px;
+    }
+
+    .icon {
+        font-size: 18px;
+    }
+
+    .profile-icon {
+        width: 30px;
+    }
+
+    /* Sliders */
+    .sliders-container {
+        padding: 80px 3% 100px 3%;
+    }
+
+    .slider-section {
+        margin-bottom: 3vw;
+    }
+
+    .slider-title {
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .movie-card {
+        min-width: 180px;
+        width: 180px;
+        height: 102px;
+    }
+
+    .movie-card:hover {
+        transform: scale(1.5) translateY(-4%);
+    }
+
+    .movie-row {
+        gap: 7px;
+        padding: 10px 3% 40px 3%;
+    }
+
+    /* Card Details Modal */
+    .card-details {
+        padding: 14px 12px;
+        gap: 10px;
+    }
+
+    .btn-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .details-info {
+        font-size: 10px;
+        gap: 6px;
+    }
+
+    .details-tags {
+        font-size: 10px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 0 3%;
+        font-size: 12px;
+    }
+
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
+        grid-gap: 12px;
+    }
+}
+
+/* ========== TABLET (769px até 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Navbar */
+    .navbar {
+        padding: 0 3%;
+        height: 70px;
+    }
+
+    .logo {
+        width: 90px;
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    /* Sliders */
+    .sliders-container {
+        padding: 90px 3% 100px 3%;
+    }
+
+    .slider-title {
+        font-size: 1.3vw;
+        line-height: 1.3vw;
+    }
+
+    .movie-card {
+        min-width: 200px;
+        width: 200px;
+        height: 112px;
+    }
+
+    .movie-card:hover {
+        transform: scale(1.55) translateY(-5%);
+    }
+
+    /* Footer */
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+/* ========== DESKTOP GRANDE (acima de 1025px) ========== */
+@media (min-width: 1025px) {
+    /* Estilos padrão já aplicados */
+    .movie-card {
+        min-width: 250px;
+        width: 250px;
+        height: 140px;
+    }
+
+    .movie-card:hover {
+        transform: scale(1.6) translateY(-5%);
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
     }
 }
