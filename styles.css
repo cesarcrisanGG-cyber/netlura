@@ -1,0 +1,310 @@
+/* Reset básico - Remove margens, paddings e define box-sizing para todos os elementos */
+/* Isso garante consistência no layout, evitando comportamentos padrão do navegador */
+* {
+    margin: 0;
+    /* Remove margem externa de todos os elementos */
+    padding: 0;
+    /* Remove preenchimento interno de todos os elementos */
+    box-sizing: border-box;
+    /* Inclui padding e border no cálculo da largura/altura total */
+}
+
+/* Variáveis CSS para os cores dos temas */
+:root[data-theme="dark"] {
+    --bg-color: #000;
+    /* Cor de fundo para modo escuro */
+    --text-color: #fff;
+    /* Cor do texto para modo escuro */
+    --border-color: #ffffff;
+    /* Cor da borda para modo escuro */
+    --button-bg: rgba(0, 0, 0, 0.7);
+    /* Cor de fundo do botão para modo escuro */
+}
+
+:root[data-theme="light"] {
+    --bg-color: #f5f5f5;
+    /* Cor de fundo para modo claro */
+    --text-color: #000;
+    /* Cor do texto para modo claro */
+    --border-color: #000;
+    /* Cor da borda para modo claro */
+    --button-bg: rgba(255, 255, 255, 0.9);
+    /* Cor de fundo do botão para modo claro */
+}
+
+/* Define variáveis padrão (dark mode) */
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --border-color: #ffffff;
+    --button-bg: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para o elemento html - Base da página */
+html {
+    width: 100%;
+    /* Largura total */
+    height: 100%;
+    /* Altura total */
+    overflow-x: hidden;
+    /* Evita scroll horizontal em mobile */
+}
+
+/* Estilos para o corpo da página - Define aparência geral da página */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Define a família de fontes */
+    background-color: var(--bg-color);
+    /* Cor de fundo usando variável CSS */
+    width: 100%;
+    /* Largura total da viewport */
+    height: 100vh;
+    /* Altura total da viewport */
+    color: var(--text-color);
+    /* Cor do texto usa variável CSS */
+    min-height: 100vh;
+    /* Altura mínima de 100% da viewport para ocupar toda a tela */
+    display: flex;
+    /* Usa flexbox para layout */
+    flex-direction: column;
+    /* Direção vertical dos filhos */
+    align-items: center;
+    /* Centraliza horizontalmente os filhos */
+    justify-content: center;
+    /* Centraliza verticalmente os filhos */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transição suave ao mudar tema */
+}
+
+/* Classe para elementos invisíveis para leitores de tela - Acessibilidade */
+/* Esconde visualmente o elemento, mas mantém acessível para tecnologias assistivas */
+.sr-only {
+    position: absolute;
+    /* Remove do fluxo normal e posiciona absolutamente */
+    width: 1px;
+    /* Largura mínima */
+    height: 1px;
+    /* Altura mínima */
+    padding: 0;
+    /* Sem preenchimento */
+    margin: -1px;
+    /* Margem negativa para esconder */
+    overflow: hidden;
+    /* Esconde conteúdo que ultrapassa */
+    clip: rect(0, 0, 0, 0);
+    /* Corta o elemento */
+    white-space: nowrap;
+    /* Evita quebra de linha */
+    border: 0;
+    /* Remove borda */
+}
+
+/* Estilos para o cabeçalho - Centraliza o título principal */
+header {
+    text-align: center;
+    /* Alinha o texto ao centro */
+    margin-bottom: 2rem;
+    /* Espaço inferior de 2 rem */
+    display: flex;
+    /* Usa flexbox */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Alinha verticalmente */
+    position: relative;
+    /* Posicionamento relativo */
+}
+
+/* Estilos para o h1 dentro do header - Título principal */
+header h1 {
+    font-size: 3rem;
+    /* Tamanho da fonte grande */
+    font-weight: 400;
+    /* Peso da fonte normal */
+    color: var(--text-color);
+    /* Cor usa variável CSS */
+}
+
+/* Estilos para o main - Conteúdo principal da página */
+main {
+    width: 100%;
+    /* Largura total */
+    max-width: 1200px;
+    /* Largura máxima para telas grandes */
+    padding: 0 2rem;
+    /* Preenchimento lateral */
+}
+
+/* Estilos para o container de perfis - Layout flexível */
+.profiles {
+    display: flex;
+    /* Usa flexbox */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    gap: 1.5rem;
+    /* Espaço entre itens - reduzido para 4 perfis */
+    flex-wrap: wrap;
+    /* Permite quebra de linha em telas pequenas */
+    list-style: none;
+    /* Remove os pontos da lista não ordenada */
+}
+
+/* Estilos para cada perfil - Aparência e interatividade */
+.profile {
+    cursor: pointer;
+    /* Cursor de mão para indicar clicável */
+    text-align: center;
+    /* Alinha texto ao centro */
+    transition: transform 0.3s ease;
+    /* Transição suave para transformações */
+}
+
+/* Estilos para o link dentro do perfil */
+.profile a {
+    text-decoration: none;
+    /* Remove o underline padrão do link */
+    color: inherit;
+    /* Herda a cor do texto */
+    display: block;
+    /* Faz o link ocupar todo o espaço do item */
+}
+
+/* Estilos para perfil no hover - Efeito de escala */
+.profile:hover {
+    transform: scale(1.05);
+    /* Aumenta ligeiramente o tamanho */
+}
+
+/* Estilos para a figure dentro do perfil - Container da imagem e legenda */
+.profile figure {
+    margin: 0;
+    /* Remove margem padrão */
+}
+
+/* Estilos para a imagem do perfil - Aparência circular */
+.profile img {
+    width: 140px;
+    /* Largura fixa - reduzida para 4 perfis */
+    height: 140px;
+    /* Altura fixa - reduzida para 4 perfis */
+    border-radius: 50%;
+    /* Forma circular */
+    object-fit: cover;
+    /* Ajusta a imagem sem distorcer */
+    border: 3px solid transparent;
+    /* Borda transparente inicial */
+    transition: border-color 0.3s ease;
+    /* Transição para cor da borda */
+}
+
+/* Estilos para imagem no hover - Borda branca */
+.profile:hover img {
+    border-color: var(--border-color);
+    /* Borda usa variável CSS no hover */
+}
+
+/* Estilos para a legenda da imagem - Texto abaixo da imagem */
+.profile figcaption {
+    margin-top: 1rem;
+    /* Espaço superior */
+    font-size: 1.2rem;
+    /* Tamanho da fonte */
+    font-weight: 300;
+    /* Peso leve */
+    color: var(--text-color);
+    /* Cor usa variável CSS */
+}
+
+/* Estilos para o botão de toggle tema - Alterna entre dark e light mode */
+.theme-toggle {
+    position: fixed;
+    /* Posicionamento fixo na tela */
+    right: 2rem;
+    /* Distância do lado direito */
+    top: 2rem;
+    /* Distância do topo */
+    z-index: 1000;
+    /* Aparece acima de todo conteúdo */
+    background-color: var(--button-bg);
+    /* Fundo usa variável CSS */
+    border: 2px solid var(--border-color);
+    /* Borda usa variável CSS */
+    color: var(--text-color);
+    /* Cor usa variável CSS */
+    font-size: 1.5rem;
+    /* Tamanho da fonte */
+    padding: 0.5rem 0.8rem;
+    /* Preenchimento interno */
+    border-radius: 50%;
+    /* Forma circular */
+    cursor: pointer;
+    /* Cursor de mão */
+    transition: all 0.3s ease;
+    /* Transição suave */
+}
+
+/* Estilos para o botão no hover */
+.theme-toggle:hover {
+    transform: scale(1.1);
+    /* Aumenta ligeiramente o tamanho */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    /* Adiciona sombra */
+}
+
+/* Estilos para o ícone do tema */
+.theme-icon {
+    display: inline-block;
+    /* Exibe como bloco inline */
+    transition: transform 0.3s ease;
+    /* Transição suave */
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(20deg);
+    /* Rotaciona o ícone no hover */
+}
+
+/* Responsividade - Ajustes para telas menores */
+/* Media query para dispositivos com largura máxima de 768px */
+@media (max-width: 768px) {
+    body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* Transição suave ao mudar tema */
+    }
+
+    header {
+        padding: 1rem 2rem;
+        /* Adiciona preenchimento no header */
+    }
+
+    header h1 {
+        font-size: 2rem;
+        /* Reduz tamanho da fonte */
+    }
+
+    .theme-toggle {
+        right: 1rem;
+        /* Reduz distância do lado direito em mobile */
+        font-size: 1.2rem;
+        /* Reduz tamanho da fonte */
+        padding: 0.4rem 0.6rem;
+        /* Reduz preenchimento */
+    }
+
+    .profiles {
+        gap: 1rem;
+        /* Reduz espaço entre perfis */
+    }
+
+    .profile img {
+        width: 110px;
+        /* Reduz largura da imagem para mobile */
+        height: 110px;
+        /* Reduz altura da imagem para mobile */
+    }
+
+    .profile figcaption {
+        font-size: 1rem;
+        /* Reduz tamanho da fonte da legenda */
+    }
+}

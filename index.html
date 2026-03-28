@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quem está assistindo?</h1>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar entre modo claro e escuro">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </header>
+    <main>
+        <section aria-labelledby="profiles-title">
+            <h2 id="profiles-title" class="sr-only">Seleção de Perfil</h2>
+            <ul class="profiles">
+                <li class="profile">
+                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Rick">
+                        <article>
+                            <figure>
+                                <img src="assets/perfil-1.png" alt="Um jovem gamer de cabelos azuis e fones de ouvido sorri enquanto segura um controle de videogame em um quarto repleto de luzes neon e referências nerds.">
+                                <figcaption>Rick</figcaption>
+                            </figure>
+                        </article>
+                    </a>
+                </li>
+                <li class="profile">
+                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Daryl">
+                        <article>
+                            <figure>
+                                <img src="assets/perfil-2.png" alt="Uma jovem gamer de cabelos roxos cacheados e olhos expressivos sorri enquanto segura um controle de videogame em um ambiente vibrante com iluminação neon.">
+                                <figcaption>Daryl</figcaption>
+                            </figure>
+                        </article>
+                    </a>
+                </li>
+                <li class="profile">
+                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Negan">
+                        <article>
+                            <figure>
+                                <img src="assets/perfil-3.png" alt="Perfil 3">
+                                <figcaption>Negan</figcaption>
+                            </figure>
+                        </article>
+                    </a>
+                </li>
+                <li class="profile">
+                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Maggie">
+                        <article>
+                            <figure>
+                                <img src="assets/perfil-4.png" alt="Perfil 4">
+                                <figcaption>Maggie</figcaption>
+                            </figure>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>
