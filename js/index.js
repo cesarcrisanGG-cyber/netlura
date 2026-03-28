@@ -47,41 +47,5 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     }
 });
 
-/* ========== GERENCIAR SELEÇÃO DO PERFIL ========== */
 
-// Seleciona todos os links dos perfis
-const profileLinks = document.querySelectorAll('.profile a');
-
-// Adiciona evento de clique em cada link do perfil
-profileLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-        /* Evita o comportamento padrão temporariamente para armazenar dados */
-        // NÃO vamos usar preventDefault, deixaremos o link navegar naturalmente
-
-        /* Obtém o elemento pai article */
-        const article = link.querySelector('article');
-        
-        /* Obtém a imagem e o nome do perfil */
-        const img = article.querySelector('img');
-        const figcaption = article.querySelector('figcaption');
-        
-        if (img && figcaption) {
-            /* Extrai nome e src da imagem */
-            const profileName = figcaption.textContent;
-            const profileImage = img.getAttribute('src');
-            
-            /* Armazena os dados do perfil ativo no localStorage */
-            const profileData = {
-                nome: profileName,
-                imagem: profileImage,
-                dataSelecao: new Date().toISOString()
-            };
-            
-            localStorage.setItem('perfilAtivo', JSON.stringify(profileData));
-            
-            /* Log para verificação */
-            console.log('Perfil armazenado:', profileData);
-        }
-    });
-});
 

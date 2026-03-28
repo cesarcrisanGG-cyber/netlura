@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,50 +17,65 @@
     <main>
         <section aria-labelledby="profiles-title">
             <h2 id="profiles-title" class="sr-only">Seleção de Perfil</h2>
-            <ul class="profiles">
-                <li class="profile">
-                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Rick">
-                        <article>
-                            <figure>
-                                <img src="assets/perfil-1.png" alt="Um jovem gamer de cabelos azuis e fones de ouvido sorri enquanto segura um controle de videogame em um quarto repleto de luzes neon e referências nerds.">
-                                <figcaption>Rick</figcaption>
-                            </figure>
-                        </article>
-                    </a>
-                </li>
-                <li class="profile">
-                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Daryl">
-                        <article>
-                            <figure>
-                                <img src="assets/perfil-2.png" alt="Uma jovem gamer de cabelos roxos cacheados e olhos expressivos sorri enquanto segura um controle de videogame em um ambiente vibrante com iluminação neon.">
-                                <figcaption>Daryl</figcaption>
-                            </figure>
-                        </article>
-                    </a>
-                </li>
-                <li class="profile">
-                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Negan">
-                        <article>
-                            <figure>
-                                <img src="assets/perfil-3.png" alt="Perfil 3">
-                                <figcaption>Negan</figcaption>
-                            </figure>
-                        </article>
-                    </a>
-                </li>
-                <li class="profile">
-                    <a href="catalogo/catalogo.html" aria-label="Escolher Perfil Maggie">
-                        <article>
-                            <figure>
-                                <img src="assets/perfil-4.png" alt="Perfil 4">
-                                <figcaption>Maggie</figcaption>
-                            </figure>
-                        </article>
-                    </a>
-                </li>
+            <ul class="profiles" id="profilesList">
+                <!-- Perfis dinâmicos serão inseridos aqui -->
             </ul>
         </section>
+
+        <!-- Botão gerenciar perfis -->
+        <div class="action-buttons" id="actionButtons" style="margin-top: 30px;">
+            <button class="btn-manage" id="btnManagePerfis" title="Gerenciar perfis">
+                <i class="fas fa-cog"></i> Gerenciar perfis
+            </button>
+        </div>
+
+        <!-- Modo edição -->
+        <div class="edit-mode-buttons" id="editModeButtons" style="display: none; margin-top: 30px;">
+            <button class="btn-cancel" id="btnCancelEdit">Cancelar</button>
+            <button class="btn-delete-all" id="btnDeleteAll">Limpar tudo</button>
+        </div>
+
+        <!-- Botão adicionar perfil -->
+        <button class="btn-add-profile" id="btnAddProfile" style="margin-top: 30px;">
+            <i class="fas fa-plus"></i> Adicionar Perfil
+        </button>
     </main>
+
+    <!-- Modal para adicionar perfil -->
+    <div class="modal" id="addProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Adicionar novo perfil</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="profileName">Nome do perfil:</label>
+                    <input 
+                        type="text" 
+                        id="profileName" 
+                        placeholder="Digite o nome do perfil"
+                        maxlength="20"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Escolha um avatar:</label>
+                    <div class="avatar-selector" id="avatarSelector">
+                        <!-- Avatares serão inseridos aqui -->
+                    </div>
+                </div>
+
+                <button class="btn-save" id="btnSaveProfile">Salvar perfil</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay do modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <script src="js/app.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

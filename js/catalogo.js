@@ -3,7 +3,7 @@
 // Função para recuperar os dados do perfil do localStorage
 function obterPerfilAtivo() {
     /* Obtém os dados do localStorage */
-    const perfilJSON = localStorage.getItem('perfilAtivo');
+    const perfilJSON = localStorage.getItem('netlura_perfil_ativo');
     
     if (perfilJSON) {
         /* Converte a string JSON para objeto */
